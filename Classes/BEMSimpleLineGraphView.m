@@ -865,13 +865,8 @@ typedef NS_ENUM(NSInteger, BEMInternalTags)
     } else {
         positionOnXAxis = (((self.frame.size.width - self.YAxisLabelXOffset) / (numberOfPoints - 1)) * index) + self.YAxisLabelXOffset + horizontalTranslation;
     }
-    
-    // Set the final center point of the x-axis labels
-    if (self.positionYAxisRight) {
-        center = CGPointMake(positionOnXAxis, self.frame.size.height - lRect.size.height/2);
-    } else {
-        center = CGPointMake(positionOnXAxis, self.frame.size.height - lRect.size.height/2);
-    }
+	
+	center = CGPointMake(positionOnXAxis, self.frame.size.height - lRect.size.height + 5); 
     
     CGRect rect = labelXAxis.frame;
     rect.size = lRect.size;
